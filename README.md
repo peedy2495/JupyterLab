@@ -9,8 +9,8 @@
 
 #### Included packages
 
-- ipywidgets : a palette of gui widgets for user interaction
-- jupyterlab_latex : LaTex language support
+- ipywidgets : gui widgets for user interaction
+- jupyterlab_latex : LaTeX language support
 - plotly : create interactive diagrams
 - bokeh : interactive visualization library
 - numpy : fundamental package for scientific computing
@@ -22,12 +22,12 @@
 - matplotlib : the most popular way to create diagrams
 - ipython : rich toolkit to help you using Python interactively
 - pandas : handle all kinds of structured data
-- xlrd : handle M$-Ecxel files
+- xlrd : handle M$-Excel files
 - sympy : library for symbolic mathematics
 - seaborn : statistical data visualization
 - nose : easier to write, find and run tests
 - ray : fast parallel computation for your code
-- jupyterlab-git : any questions?
+- jupyterlab-git : any questions? ;-)
 
 #### Installed Jupyterlab extensions
 - [Jupyter Widgets](https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20Basics.html)
