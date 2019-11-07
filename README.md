@@ -5,8 +5,6 @@
 
 ## Jupterlab Docker container
 
-**This Docker container runs as root user!** It can be helpful when e.g. the popular jupyter/datascience-notebook image does not work because it runs as Jovyan user.
-
 #### Included packages
 
 - ipywidgets : gui widgets for user interaction
@@ -39,6 +37,9 @@
 - [jupyterlab_bokeh](https://github.com/bokeh/jupyterlab_bokeh)
 - [@jupyterlab/toc](https://www.npmjs.com/package/@jupyterlab/toc)
 - [@jupyterlab/git](https://www.npmjs.com/package/@jupyterlab/git)
+
+**This Docker container runs as root user!**  
+It can be helpful when e.g. the popular jupyter/datascience-notebook image does not work because it runs as Jovyan user.
 
 ### Your notebooks
 
