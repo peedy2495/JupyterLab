@@ -9,7 +9,7 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
   rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade \
-    jupyterlab==1.1.4 \
+    jupyterlab \
     ipywidgets \
     jupyterlab_latex \
     plotly \
