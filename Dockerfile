@@ -1,7 +1,7 @@
-ENV PYTHON-VERSION=3.7
+FROM python:3.7
 
-FROM python:$PYTHON_VERSION
-
+ARG PORT
+ENV PYTHON_VERSION=${PORT}
 ENV JUPYTERLAB_VERSION=1.1.4
 
 # Build-time metadata as defined at http://label-schema.org
@@ -9,11 +9,11 @@ ARG BUILD_DATE
 ARG VCS_REF
 ARG APP_VCS_REF
 
-LABEL maintainer="Peter Mark <petermark@spamfreemail.de>" \
+LABEL maintainer="Peedy2495 <peedy2495@nomail.net>" \
       jupyterlab-version=$JUPYTERLAB_VERSION \
-      python-version=$PYTHON-VERSION \
+      python-version=$PYTHON_VERSION \
       app-vcs-url="https://github.com/jupyterlab/jupyterlab" \
-      app-vcs-ref="$APP_VCS_REF" \
+      app-vcs-ref=$APP_VCS_REF \
       vcs-url-orig="https://github.com/jupyterlab/jupyterlab.git" \
       org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.name="jupyterlab-docker" \
