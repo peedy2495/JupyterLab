@@ -1,4 +1,28 @@
-FROM python:3.7
+ARG PYTHON-VERSION=3.7
+
+FROM python:$PYTHON-VERSION
+
+ARG JUPYTERLAB_VERSION=1.1.4
+
+# Build-time metadata as defined at http://label-schema.org
+ARG BUILD_DATE
+ARG VCS_REF
+ARG APP_VCS_REF
+
+LABEL maintainer="Peter Mark <petermark@spamfreemail.de>" \
+      jupyterlab-version="$JUPYTERLAB_VERSION" \
+      python-version="$PYTHON-VERSION" \
+      app-vcs-url="https://github.com/jupyterlab/jupyterlab" \
+      app-vcs-ref="$APP_VCS_REF" \
+      vcs-url-orig="https://github.com/jupyterlab/jupyterlab.git" \
+      org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.name="jupyterlab-docker" \
+      org.label-schema.description="JupyterLab computational environment" \
+      org.label-schema.url="https://jupyterlab.readthedocs.io/en/stable/#" \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vcs-url="https://github.com/peedy2495/JupyterLab.git" \
+      org.label-schema.docker.cmd="docker run --detach --publish 0.0.0.0:8888:8888 -v /home/:/notebooks" \
+      org.label-schema.schema-version="1.0"
 
 RUN git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it && \
   bash ~/.bash_it/install.sh --silent
