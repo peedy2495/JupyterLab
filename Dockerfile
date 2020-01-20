@@ -1,6 +1,6 @@
 ARG PYTHON-VERSION=3.7
 
-FROM python:$PYTHON-VERSION
+FROM python:${PYTHON-VERSION}
 
 ARG JUPYTERLAB_VERSION=1.1.4
 
@@ -10,8 +10,8 @@ ARG VCS_REF
 ARG APP_VCS_REF
 
 LABEL maintainer="Peter Mark <petermark@spamfreemail.de>" \
-      jupyterlab-version="$JUPYTERLAB_VERSION" \
-      python-version="$PYTHON-VERSION" \
+      jupyterlab-version="${JUPYTERLAB_VERSION}" \
+      python-version="${PYTHON-VERSION}" \
       app-vcs-url="https://github.com/jupyterlab/jupyterlab" \
       app-vcs-ref="$APP_VCS_REF" \
       vcs-url-orig="https://github.com/jupyterlab/jupyterlab.git" \
@@ -33,7 +33,7 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
   rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade \
-    jupyterlab \
+    jupyterlab==${JUPYTERLAB_VERSION} \
     ipywidgets \
     jupyterlab_latex \
     plotly \
@@ -53,7 +53,7 @@ RUN pip install --upgrade \
     nose \
     ray \
     jupyterlab-git && \
-  jupyter labextension install \
+    jupyter labextension install \
     @jupyter-widgets/jupyterlab-manager \
     @jupyterlab/latex \
     @mflevine/jupyterlab_html \
@@ -70,3 +70,5 @@ EXPOSE 8888
 VOLUME /notebooks
 WORKDIR /notebooks
 ENTRYPOINT ["entrypoint.sh"]
+
+
